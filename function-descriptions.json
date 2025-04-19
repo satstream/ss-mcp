@@ -1,0 +1,132 @@
+{
+  "address_get": {
+    "description": "Get detailed information about a specific Bitcoin address, including transaction history and UTXO details.",
+    "when_to_use": "Use this when you need comprehensive data about a Bitcoin address, including its transaction history, balance, and UTXO information.",
+    "parameters": {
+      "address": "Bitcoin address to query information about"
+    },
+    "example": "address_get({ address: \"1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa\" })"
+  },
+  "block_get": {
+    "description": "Get detailed information about a specific Bitcoin block by its hash or height.",
+    "when_to_use": "Use this to retrieve block header data, transaction IDs, mining details, and other blockchain data for a specific block.",
+    "parameters": {
+      "identifier": "Block hash or block height to retrieve information for"
+    },
+    "example": "block_get({ identifier: \"000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f\" })"
+  },
+  "blockchain_info": {
+    "description": "Get current Bitcoin blockchain information including chain height, latest block details, and network status.",
+    "when_to_use": "Use this for obtaining overall Bitcoin network statistics and the current state of the blockchain.",
+    "parameters": {
+      "random_string": "Optional parameter required by the MCP format"
+    },
+    "example": "blockchain_info({ random_string: \"dummy\" })"
+  },
+  "address_balance_get": {
+    "description": "Get the total Bitcoin balance (in satoshis) of an address by summing all its deltas.",
+    "when_to_use": "Use this when you only need the balance information without the full address details.",
+    "parameters": {
+      "address": "Bitcoin address to query balance for"
+    },
+    "example": "address_balance_get({ address: \"1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa\" })"
+  },
+  "address_deltas_get": {
+    "description": "Get transaction deltas (inputs and outputs) for a specific Bitcoin address with pagination.",
+    "when_to_use": "Use this to analyze the transaction history of an address with filtering by block height.",
+    "parameters": {
+      "address": "Bitcoin address to query deltas for",
+      "page_size": "Optional: Number of results per page (default: 100, max: 1000)",
+      "start_height": "Optional: Start block height for filtering",
+      "end_height": "Optional: End block height for filtering",
+      "cursor": "Optional: Base64 encoded cursor for pagination"
+    },
+    "example": "address_deltas_get({ address: \"1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa\", page_size: 50 })"
+  },
+  "transaction_get": {
+    "description": "Get detailed information about a specific Bitcoin transaction by its transaction ID (txid).",
+    "when_to_use": "Use this to retrieve comprehensive data about inputs, outputs, fees, and confirmation status.",
+    "parameters": {
+      "txid": "Transaction ID (txid) to query information for"
+    },
+    "example": "transaction_get({ txid: \"4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b\" })"
+  },
+  "ordinals_inscription_get": {
+    "description": "Get information about a specific Bitcoin Ordinals inscription by its ID.",
+    "when_to_use": "Use this to retrieve metadata about NFT-like inscriptions on Bitcoin, including content type and ownership details.",
+    "parameters": {
+      "inscription_id": "Inscription ID to query information for"
+    },
+    "example": "ordinals_inscription_get({ inscription_id: \"6fb976ab49dcec017f1e201e84395983204ae1a7c2abf7ced0a85d692e442799i0\" })"
+  },
+  "mempool_info_get": {
+    "description": "Get current Bitcoin mempool statistics including size, transaction count, and fee estimates.",
+    "when_to_use": "Use this to understand the current state of unconfirmed transactions and fee market conditions.",
+    "parameters": {
+      "random_string": "Optional parameter required by the MCP format"
+    },
+    "example": "mempool_info_get({ random_string: \"dummy\" })"
+  },
+  "mempool_transactions_get": {
+    "description": "List unconfirmed transactions in the Bitcoin mempool with pagination.",
+    "when_to_use": "Use this to monitor incoming transactions before they are included in a block.",
+    "parameters": {
+      "page_size": "Optional: Number of results per page (default: 100, max: 1000)",
+      "cursor": "Optional: Base64 encoded cursor for pagination"
+    },
+    "example": "mempool_transactions_get({ page_size: 20 })"
+  },
+  "address_validate": {
+    "description": "Validate a Bitcoin address and retrieve information about its format, type, and validity.",
+    "when_to_use": "Use this to check if an address is valid before sending or receiving transactions, or to get details about address format.",
+    "parameters": {
+      "address": "Bitcoin address to validate"
+    },
+    "example": "address_validate({ address: \"1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa\" })"
+  },
+  "address_outputs_get": {
+    "description": "Retrieve UTXOs (unspent transaction outputs) held by a specific Bitcoin address with optional type filtering.",
+    "when_to_use": "Use this to get detailed information about available UTXOs for spending or analysis, with ability to filter by type.",
+    "parameters": {
+      "address": "Bitcoin address to query outputs for",
+      "type": "Optional: UTXO type to filter by (any, cardinal, inscribed, runic)"
+    },
+    "example": "address_outputs_get({ address: \"1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa\", type: \"cardinal\" })"
+  },
+  "address_rune_deltas_get": {
+    "description": "Get rune deltas (changes in rune balances) for a specific Bitcoin address with pagination.",
+    "when_to_use": "Use this to analyze the history of rune token transfers for an address, including incoming and outgoing tokens.",
+    "parameters": {
+      "address": "Bitcoin address to query rune deltas for",
+      "page_size": "Optional: Number of results per page (default: 100, max: 1000)",
+      "start_height": "Optional: Start block height for filtering",
+      "end_height": "Optional: End block height for filtering",
+      "cursor": "Optional: Cursor for pagination"
+    },
+    "example": "address_rune_deltas_get({ address: \"1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa\", page_size: 50 })"
+  },
+  "rune_get": {
+    "description": "Retrieve information about a specific Bitcoin Rune by name or ID.",
+    "when_to_use": "Use this to get details about a specific rune token, including supply, minting status, and transactions.",
+    "parameters": {
+      "identifier": "Rune name or ID (e.g., \"UNCOMMON•GOODS\" or \"1:0\")"
+    },
+    "example": "rune_get({ identifier: \"UNCOMMON•GOODS\" })"
+  },
+  "runes_latest_get": {
+    "description": "Retrieve information about the last 100 inscribed Bitcoin Runes (first page).",
+    "when_to_use": "Use this to get an overview of the most recently created rune tokens on the Bitcoin blockchain.",
+    "parameters": {
+      "random_string": "Optional parameter required by the MCP format"
+    },
+    "example": "runes_latest_get({ random_string: \"dummy\" })"
+  },
+  "runes_page_get": {
+    "description": "Retrieve a specific page of 100 inscribed Bitcoin Runes.",
+    "when_to_use": "Use this for paginated access to the complete list of rune tokens on the blockchain.",
+    "parameters": {
+      "page": "Page number to retrieve"
+    },
+    "example": "runes_page_get({ page: 2 })"
+  }
+} 

@@ -1,0 +1,19 @@
+{
+  "name": "ss-mcp",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/sinon": "^17.0.4",
+    "sinon": "^20.0.0",
+    "vitest": "^3.1.1"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.10.1",
+    "axios": "^1.8.4",
+    "zod": "^3.24.3"
+  }
+}
