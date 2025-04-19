@@ -23,6 +23,20 @@ Or pass the API key as a command line argument:
 bun run index.ts your-api-key-here
 ```
 
+## About Satstream
+
+[Satstream](https://www.satstream.io) is a comprehensive Bitcoin blockchain API service that provides access to real-time blockchain data, including transactions, addresses, blocks, and specialized data like Ordinals inscriptions and Runes tokens.
+
+### Getting an API Key
+
+To use this MCP server, you'll need a Satstream API key. You can obtain one by:
+
+1. Visiting [Satstream Documentation](https://docs.satstream.io)
+2. Signing up for an account
+3. Generating an API key from your dashboard
+
+The free tier provides access to basic functionality with rate limits, while paid plans offer higher rate limits and additional features.
+
 ## Available MCP Functions
 
 The following MCP functions are available for Bitcoin data queries:

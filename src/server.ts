@@ -12,7 +12,7 @@ if (!API_KEY) {
 }
 
 const server = new McpServer({
-  name: "satstream-mcp-server",
+  name: "satstream-bitcoin-mcp-server",
   version: "1.0.0",
 });
 

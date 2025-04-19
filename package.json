@@ -2,6 +2,7 @@
   "name": "ss-mcp",
   "module": "index.ts",
   "type": "module",
+  "license": "MIT",
   "devDependencies": {
     "@types/bun": "latest",
     "@types/sinon": "^17.0.4",
