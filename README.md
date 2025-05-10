@@ -2,6 +2,10 @@
 
 A Model Context Protocol (MCP) server that provides access to Satstream Bitcoin data API.
 
+<a href="https://glama.ai/mcp/servers/@satstream/ss-mcp">
+  <img width="380" height="200" src="https://glama.ai/mcp/servers/@satstream/ss-mcp/badge" alt="Satstream Server MCP server" />
+</a>
+
 ## Setup
 
 To install dependencies:
